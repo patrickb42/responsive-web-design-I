@@ -1,3 +1,351 @@
-/* Use your own code or past solution for Great Idea Web Page CSS here! */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Set every element's box-sizing to border-box */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Bangers', cursive;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
 
 
+
+
+
+/* INDEX.HTML */
+
+
+
+
+
+/*
+:root {
+    --mobile-break: 502px;
+}
+*/
+
+* {
+    border: 1px solid red !important;
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+        "logo"
+        "nav"
+        "main"
+        "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+}
+
+
+body * {
+    width: 100%;
+}
+
+.logo {
+    grid-area: logo;
+    display: block;
+    width: auto;
+    margin: 20px auto;
+}
+
+nav {
+    grid-area: nav;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 19px;
+    font-size: 1.2rem;
+    border-top: 1px solid grey;
+    color: grey;
+}
+
+nav :last-child {
+    border-bottom: 1px solid grey;
+}
+
+
+
+
+#main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "top"
+        "features"
+        "about"
+        "middle-img"
+        "services"
+        "product"
+        "vision";
+    padding: 0 4%;
+}
+
+/*
+        "top"
+        "features"
+        "about"
+        "middle-img"
+        "services"
+        "product"
+        "vision"
+*/
+
+@media (min-width: 502px) {
+    #main {
+        margin: 0 5%;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas:
+            "top""top""top""top""top""top""top""top""top""top""top""top"
+            "features""features""features""features""features""features""about""about""about""about""about""about"
+            "middle-img""middle-img""middle-img""middle-img""middle-img""middle-img""middle-img""middle-img""middle-img""middle-img""middle-img""middle-img"
+            "services""services""services""services""product""product""product""product""vision""vision""vision""vision"
+            "footer""footer""footer""footer""footer""footer""footer""footer""footer""footer""footer""footer";
+    }
+}
+
+.top {
+    border-bottom: 1px solid black;
+    padding: 50px 0 70px;
+    margin-bottom: 60px;
+}
+
+/*
+@media (min-width: 502px) {
+    .top {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+*/
+
+.top div {
+    grid-area: slogan;
+}
+
+.top h1 {
+    font-size: 4.25rem;
+    text-align: center;
+}
+
+.top button {
+    display: block;
+    width: auto;
+    margin: auto;
+    padding: 5px 40px;
+    border: 1px solid black;
+    background-color: white;
+    font-size: 1rem;
+}
+
+.header-img {
+    grid-area: header-img;
+    display: none;
+}
+
+@media (min-width: 502px) {
+    .header-img {
+        display: block;
+    }
+}
+
+.info-blurb {
+    margin: 24px 0;
+}
+
+#features {
+    grid-area: features;
+}
+
+#about {
+    grid-area: about;
+}
+
+#services {
+    grid-area: services;
+}
+
+#product {
+    grid-area: product;
+}
+
+#vision {
+    grid-area: vision;
+}
+
+.middle-img {
+    grid-area: middle-img;
+}
+
+
+footer {
+    grid-area: footer;
+    padding: 0 4%;
+    justify-self: left;
+}
+
+footer p {
+    margin: 15px 0;
+}
+
+#copyright {
+    padding: 20px 0 5px;
+    text-align: center;
+}
