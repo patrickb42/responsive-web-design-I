@@ -223,6 +223,7 @@ nav {
 @media (min-width: 520px) {
     nav {
         display: flex;
+        justify-content: space-evenly;
     }
 }
 
@@ -230,6 +231,7 @@ nav a {
     display: block;
     text-decoration: none;
     text-align: center;
+    width: auto;
     padding: 19px;
     font-size: 1.2rem;
     border-top: 1px solid grey;
@@ -239,9 +241,16 @@ nav a {
 @media (min-width: 520px) {
     nav a {
         font-size: .9rem;
-        padding-top: 30px;
-        margin: 0;
+        align-self: center;
+        padding: 0;
+        margin-top: 19px;
         border: none;
+    }
+}
+
+@media (min-width: 820px) {
+    nav a {
+        margin-top: 0;
     }
 }
 
