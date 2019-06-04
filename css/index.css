@@ -167,13 +167,15 @@ h5 {
 
 /*
 :root {
-    --mobile-break: 502px;
+    --mobile-break: 520px;
 }
 */
 
+/*
 * {
     border: 1px solid red !important;
 }
+*/
 
 body {
     display: grid;
@@ -185,12 +187,27 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     justify-items: center;
+    max-width: 1000px;
+}
+
+@media (min-width: 820px) {
+    body {
+        grid-template-columns: repeat(12, 5.5833%);
+        grid-template-rows: auto;
+        grid-column-gap: 3%;
+        grid-template-areas:
+            "nav nav nav nav nav nav nav nav nav logo logo logo"
+            "main main main main main main main main main main main main"
+            "footer footer footer footer footer footer footer footer footer footer footer footer";
+        margin: 0 auto;
+    }
 }
 
 
 body * {
     width: 100%;
 }
+
 
 .logo {
     grid-area: logo;
@@ -203,6 +220,12 @@ nav {
     grid-area: nav;
 }
 
+@media (min-width: 520px) {
+    nav {
+        display: flex;
+    }
+}
+
 nav a {
     display: block;
     text-decoration: none;
@@ -213,8 +236,23 @@ nav a {
     color: grey;
 }
 
+@media (min-width: 520px) {
+    nav a {
+        font-size: .9rem;
+        padding-top: 30px;
+        margin: 0;
+        border: none;
+    }
+}
+
 nav :last-child {
     border-bottom: 1px solid grey;
+}
+
+@media (min-width: 520px) {
+    nav :last-child {
+        border: none;
+    }
 }
 
 
@@ -236,49 +274,51 @@ nav :last-child {
     padding: 0 4%;
 }
 
-/*
-        "top"
-        "features"
-        "about"
-        "middle-img"
-        "services"
-        "product"
-        "vision"
-*/
 
-@media (min-width: 502px) {
+@media (min-width: 520px) {
     #main {
-        margin: 0 5%;
+        /*        margin: 0 5%;*/
         display: grid;
-        grid-template-columns: repeat(12, 1fr);
+        grid-template-columns: repeat(12, 5.5833%);
         grid-template-rows: auto;
-        grid-template-areas:
-            "top""top""top""top""top""top""top""top""top""top""top""top"
-            "features""features""features""features""features""features""about""about""about""about""about""about"
-            "middle-img""middle-img""middle-img""middle-img""middle-img""middle-img""middle-img""middle-img""middle-img""middle-img""middle-img""middle-img"
-            "services""services""services""services""product""product""product""product""vision""vision""vision""vision"
-            "footer""footer""footer""footer""footer""footer""footer""footer""footer""footer""footer""footer";
+        grid-column-gap: 3%;
+        grid-template-areas: "top top top top top top top top top top top top"
+            "features features features features features features about about about about about about"
+            "middle-img middle-img middle-img middle-img middle-img middle-img middle-img middle-img middle-img middle-img middle-img middle-img"
+            "services services services services product product product product vision vision vision vision"
+            "footer-border footer-border footer-border footer-border footer-border footer-border footer-border footer-border footer-border footer-border footer-border footer-border"
+            "footer footer footer footer footer footer footer footer footer footer footer footer";
+        padding: 0 2%;
     }
 }
 
 .top {
+    grid-area: top;
+    display: flex;
+    justify-content: space-around;
     border-bottom: 1px solid black;
     padding: 50px 0 70px;
     margin-bottom: 60px;
 }
 
-/*
-@media (min-width: 502px) {
+@media (min-width: 520px) {
     .top {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        margin-bottom: 0;
     }
 }
-*/
 
-.top div {
+
+#slogan {
     grid-area: slogan;
 }
+
+@media (min-width: 820px) {
+    #slogan {
+        width: 48%;
+        align-self: center;
+    }
+}
+
 
 .top h1 {
     font-size: 4.25rem;
@@ -300,9 +340,11 @@ nav :last-child {
     display: none;
 }
 
-@media (min-width: 502px) {
+@media (min-width: 820px) {
     .header-img {
         display: block;
+        width: 48%;
+        padding: 4%;
     }
 }
 
@@ -335,10 +377,24 @@ nav :last-child {
 }
 
 
+#footer-border {
+    width: 92%;
+}
+
 footer {
     grid-area: footer;
-    padding: 0 4%;
-    justify-self: left;
+    justify-self: center;
+    padding: 30px 4% 0;
+    width: 96%;
+    border-top: 1px solid black;
+}
+
+@media (min-width: 520px) {
+    footer {
+        padding-left: 0;
+        padding-right: 0;
+
+    }
 }
 
 footer p {
